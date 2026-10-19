@@ -1,0 +1,109 @@
+meta:
+  title: "Mariusz Łaszewski — zespoły agentów AI, MCP, jakość"
+  description: "Lider jakości, który projektuje i prowadzi zespół 17+ wyspecjalizowanych agentów AI. Systemy agentowe, MCP, ewaluacje i bezpieczne wdrożenia."
+ui:
+  switchLabel: "EN"
+  themeLabel: "Przełącz tryb ciemny"
+  nav:
+    - { label: "Co robię", href: "#what" }
+    - { label: "Jak pracujemy", href: "#team" }
+    - { label: "Zbudowane", href: "#built" }
+    - { label: "O mnie", href: "#about" }
+  badge: { open-source: "open source", production: "produkcyjnie", private: "prywatne" }
+  modelLabel: { light: "lżejszy model — czyta, szuka, streszcza", strong: "mocniejszy model — architektura, decyzje, review" }
+hero:
+  name: "Mariusz Łaszewski"
+  tagline: "Lider jakości, który buduje zespoły agentów AI."
+  intro: "Projektuję wieloagentowe systemy LLM i prowadzę je jak zespół inżynierski: jasne role, bramki jakości, mierzony koszt i zero sekretów w kodzie. Doświadczenie w inżynierii jakości sprawia, że agenci dostarczają pracę, której mogę ufać."
+  links:
+    - { label: "GitHub", href: "https://github.com/laszewskimariusz" }
+    - { label: "LinkedIn", href: "https://www.linkedin.com/in/mariusz-laszewski-32028394/" }
+    - { label: "E-mail", href: "mailto:laszewskimariusz@gmail.com" }
+services:
+  eyebrow: "Co robię"
+  title: "Trzy rzeczy, w których jestem dobry"
+  items:
+    - title: "Systemy agentowe"
+      body: "Zespoły wyspecjalizowanych agentów z jasnymi rolami, przekazaniami i limitami — orkiestrowane, nie improwizowane."
+      points: ["orkiestracja wielu agentów", "context engineering", "pamięć długoterminowa agentów", "routing modeli według zadania"]
+    - title: "MCP i integracje"
+      body: "Agenci dostają narzędzia przez Model Context Protocol i wersjonowane pluginy, z uprawnieniami ograniczonymi do roli."
+      points: ["własne serwery MCP", "wersjonowany plugin z agentami i skillami", "integracje z systemem zadań i wdrożeniami"]
+    - title: "Jakość i bezpieczeństwo AI"
+      body: "Ta sama dyscyplina co w regulowanym QMS: specyfikacje, przeglądy, testy, udokumentowane decyzje i chronione sekrety."
+      points: ["bramka przeglądu specyfikacji (3 recenzentów, 8/10)", "LLM-as-judge i testy E2E", "ochrona przed prompt injection i wyciekiem sekretów", "sekrety w HashiCorp Vault"]
+team:
+  eyebrow: "Jak pracujemy"
+  title: "Jeden człowiek, jeden koordynator, zespół specjalistów"
+  intro: "Ja wyznaczam kierunek i zatwierdzam to, co ważne. Agent-koordynator planuje i deleguje. Agenci-specjaliści wykonują pracę — każdy z własną rolą, narzędziami i modelem."
+  human: { role: "Ja — CEO i właściciel produktu", does: "Wyznaczam cele, podejmuję decyzje biznesowe, zatwierdzam specyfikacje i nieodwracalne działania." }
+  coordinator: { role: "Agent-koordynator (CTO)", does: "Dzieli pracę na zadania, dobiera specjalistę i model, sprawdza wyniki, zanim trafią do mnie." }
+  agents:
+    - { id: architect, role: "Architekt", does: "Projekt systemu i API, rejestr decyzji architektonicznych.", model: strong }
+    - { id: developer, role: "Developer", does: "Funkcje i poprawki, najpierw testy, czysty kod.", model: strong }
+    - { id: reviewer, role: "Code reviewer", does: "Przegląda każdą zmianę pod kątem poprawności i standardów.", model: strong }
+    - { id: qa, role: "Inżynier QA", does: "Testy jednostkowe, integracyjne i end-to-end, plany testów.", model: light }
+    - { id: security, role: "Bezpieczeństwo", does: "Kontrole OWASP, utwardzanie, skanowanie sekretów.", model: strong }
+    - { id: infra, role: "Infrastruktura", does: "Kontenery, CI/CD, monitoring, wdrożenia.", model: light }
+    - { id: research, role: "Research", does: "Analiza technologii, benchmarki, rekomendacje.", model: light }
+    - { id: auditor, role: "Audytor ISO", does: "Audyty ISO 9001 i ISO 27001 budowanych produktów.", model: strong }
+  flowTitle: "Od pomysłu do produkcji"
+  flow:
+    - { id: task, label: "Zadanie", detail: "Każda praca zaczyna się od zgłoszenia w systemie zadań." }
+    - { id: spec, label: "Specyfikacja", detail: "Spisana specyfikacja z kryteriami akceptacji." }
+    - { id: gate, label: "Bramka przeglądu", detail: "Trzech niezależnych recenzentów; poniżej 8/10 wraca do poprawy." }
+    - { id: build, label: "Budowa", detail: "Implementacja na odizolowanej maszynie, najpierw testy." }
+    - { id: review, label: "Code review", detail: "Osobny agent przegląda zmianę." }
+    - { id: test, label: "Testy", detail: "Testy automatyczne, E2E tam, gdzie to ważne." }
+    - { id: ship, label: "Wdrożenie", detail: "Deploy, weryfikacja, zapis decyzji." }
+  principlesTitle: "Zasady zespołu"
+  principles:
+    - "Tanie modele czytają i szukają; mocne modele decydują."
+    - "Jeden pisarz na plik — agenci nie edytują tego samego równolegle."
+    - "Zero sekretów w repozytoriach; wszystko pobierane z sejfu w czasie działania."
+    - "Nieodwracalne działania wymagają zgody człowieka."
+    - "Weryfikuj to, co agent wywnioskował, nie tylko to, co przeczytał."
+stats:
+  eyebrow: "W liczbach"
+  title: "Co dziś działa w tym systemie"
+  items:
+    - { value: "17+", label: "wyspecjalizowanych agentów AI" }
+    - { value: "~25", label: "projektów w portfelu" }
+    - { value: "13", label: "działa produkcyjnie" }
+    - { value: "−50%", label: "tokenów na start sesji (81k → 40k)" }
+    - { value: "210", label: "sekretów w Vault, 0 w repozytoriach" }
+    - { value: "20+", label: "decyzji architektonicznych (ADR)" }
+projects:
+  eyebrow: "Co zbudowałem"
+  title: "Zbudowane z moim zespołem agentów"
+  items:
+    - { id: skemo, name: "Skemo", summary: "Workspace inżynierski — zadania, dokumentacja, canvas — z warstwą AI: feed agentów, wyszukiwanie semantyczne i API MCP dla agentów.", stack: ["Next.js", "MCP", "Containers"], visibility: production }
+    - { id: topsky, name: "TopSky Desktop", summary: "Aplikacja desktopowa dla pilotów symulatorów: menedżer malowań dla MSFS i X-Plane.", stack: ["Tauri", "Rust", "React"], visibility: production }
+    - { id: coc, name: "Claude-of-Crafting", summary: "Symulator craftingu Path of Exile z trenerem AI opartym na Claude API.", stack: ["Next.js", "Claude API"], visibility: private }
+    - { id: shygarlic, name: "Shy Garlic", summary: "Open-source'owy panel homelabu, w którym plik YAML i interfejs to to samo.", stack: ["Go", "Docker", "Helm"], visibility: open-source, repo: "https://github.com/zatto-dev/shy-garlic" }
+    - { id: brainai, name: "brain-ai", summary: "Oszczędny w tokenach framework pamięci i orkiestracji wielu agentów dla agentów programistycznych.", stack: ["Claude Code", "Agent Skills", "Markdown"], visibility: open-source, repo: "https://github.com/laszewskimariusz/brain-ai" }
+    - { id: atlas, name: "Atlas Drogi Mlecznej", summary: "Interaktywny atlas 3D galaktyki z własnym silnikiem fizycznym WebGL2.", stack: ["WebGL2", "Three.js", "TypeScript"], visibility: private }
+    - { id: rukia, name: "Rukia", summary: "Rodzinny asystent AI z pamięcią długoterminową, fallbackiem modeli i utwardzonymi uprawnieniami.", stack: ["hermes-agent", "Honcho"], visibility: private }
+stack:
+  eyebrow: "Stack"
+  title: "Narzędzia, których używam na co dzień"
+  groups:
+    - { title: "AI i LLM", items: ["Claude API", "Claude Code", "OpenAI GPT", "Codex CLI", "LiteLLM", "MCP", "Honcho", "M365 Copilot Agent Builder"] }
+    - { title: "Kod", items: ["TypeScript", "Python", "Bash", "Next.js", "React", "Astro", "Tauri", "WebGL2"] }
+    - { title: "Dane", items: ["PostgreSQL", "Supabase", "Upstash", "Power BI"] }
+    - { title: "Infrastruktura", items: ["Proxmox", "Docker", "Forgejo CI", "Dokploy", "Vercel", "Cloudflare", "Grafana", "HashiCorp Vault"] }
+    - { title: "Jakość", items: ["ISO 9001:2015", "CAPA / RCA", "Six Sigma (DMAIC)", "ADR", "Testy E2E"] }
+about:
+  eyebrow: "O mnie"
+  title: "Od inżynierii jakości do inżynierii AI"
+  paragraphs:
+    - "Zaczynałem w IT i administracji sieciami, także w Wojsku Polskim, potem ponad dziesięć lat w logistyce w Wielkiej Brytanii, prowadząc zespoły do 36 osób."
+    - "Dziś jestem Quality Lead Engineerem w Leidos w obszarze systemów bezpieczeństwa lotnisk — audyty ISO 9001, CAPA, jakość dostawców i zespół inżynierów i inspektorów."
+    - "Od 2024 roku prowadzę Zatto Software, gdzie buduję produkty z zespołem agentów AI. To myślenie jakościowe sprawia, że ten zespół jest niezawodny."
+  location: "Teraz UK · od 2027 okolice Warszawy"
+footer:
+  note: "Tę stronę zbudowałem ja i mój zespół agentów — zobacz wyżej, jak pracujemy."
+  links:
+    - { label: "GitHub", href: "https://github.com/laszewskimariusz" }
+    - { label: "LinkedIn", href: "https://www.linkedin.com/in/mariusz-laszewski-32028394/" }
+    - { label: "zatto.dev", href: "https://zatto.dev" }

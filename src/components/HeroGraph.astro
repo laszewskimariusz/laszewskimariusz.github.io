@@ -1,0 +1,19 @@
+---
+const nodes = [
+  { x: 200, y: 200, r: 26, c: 'var(--accent)' },
+  { x: 200, y: 90, r: 14 }, { x: 305, y: 140, r: 14 }, { x: 320, y: 255, r: 14 },
+  { x: 225, y: 320, r: 14 }, { x: 105, y: 300, r: 14 }, { x: 80, y: 180, r: 14 }, { x: 120, y: 85, r: 14 },
+];
+---
+<svg class="graph" viewBox="0 0 400 400" aria-hidden="true">
+  {nodes.slice(1).map((n, i) => <line x1="200" y1="200" x2={n.x} y2={n.y} class="edge" style={`animation-delay:${i * 0.35}s`} />)}
+  {nodes.map((n, i) => <circle cx={n.x} cy={n.y} r={n.r} class={i === 0 ? 'core' : 'node'} style={`animation-delay:${i * 0.35}s`} />)}
+</svg>
+<style>
+  .graph { width: 100%; max-width: 420px; margin-inline: auto; color: var(--fg); }
+  .edge { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 3 5; animation: flow 3s linear infinite; }
+  .node { fill: var(--bg); stroke: var(--fg); stroke-width: 1; animation: pulse 3.2s ease-in-out infinite; }
+  .core { fill: var(--fg); }
+  @keyframes flow { to { stroke-dashoffset: -16; } }
+  @keyframes pulse { 50% { stroke-width: 2.5; } }
+</style>

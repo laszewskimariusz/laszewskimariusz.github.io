@@ -1,0 +1,15 @@
+---
+import type { Site } from '../lib/content';
+interface Props { data: Site['about'] }
+const { data } = Astro.props;
+---
+<section id="about"><div class="container narrow">
+  <p class="eyebrow">{data.eyebrow}</p><h2>{data.title}</h2>
+  {data.paragraphs.map((p) => <p>{p}</p>)}
+  <p class="loc">{data.location}</p>
+</div></section>
+<style>
+  .narrow > * { max-width: 760px; }
+  p { font-size: 1.12rem; color: var(--soft); letter-spacing: -0.006em; }
+  .loc { font: 400 .7rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: var(--space-6); }
+</style>

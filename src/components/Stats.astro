@@ -1,0 +1,17 @@
+---
+import type { Site } from '../lib/content';
+interface Props { data: Site['stats'] }
+const { data } = Astro.props;
+---
+<section id="numbers"><div class="container">
+  <p class="eyebrow">{data.eyebrow}</p><h2>{data.title}</h2>
+  <dl class="stats">
+    {data.items.map((s) => <div class="card"><dt>{s.label}</dt><dd>{s.value}</dd></div>)}
+  </dl>
+</div></section>
+<style>
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); margin: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+  .card { display: flex; flex-direction: column-reverse; justify-content: flex-end; border-radius: 0; border-width: 0 1px 1px 0; background: transparent; }
+  dd { margin: 0; font: 300 clamp(2.4rem, 5vw, 3.4rem)/1 var(--font-sans); letter-spacing: -0.04em; color: var(--fg); }
+  dt { font: 400 .7rem/1.5 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: var(--space-3); }
+</style>

@@ -1,0 +1,35 @@
+---
+import type { Project } from '../lib/content';
+interface Props { p: Project; badge: string }
+const { p, badge } = Astro.props;
+---
+<article class="card proj" data-project={p.id}>
+  <div class="art" aria-hidden="true"><span>{p.name.slice(0, 1)}</span></div>
+  <div class="head"><h3>{p.name}</h3><span class={`badge ${p.visibility}`}>{badge}</span></div>
+  <p>{p.summary}</p>
+  <ul class="stack">{p.stack.map((t) => <li>{t}</li>)}</ul>
+  {(p.repo || p.demo) && (
+    <div class="links">
+      {p.repo && <a href={p.repo} rel="noopener">Code →</a>}
+      {p.demo && <a href={p.demo} rel="noopener">Demo →</a>}
+    </div>)}
+</article>
+<style>
+  .proj { display: flex; flex-direction: column; gap: var(--space-3); padding: 0; overflow: hidden; }
+  .proj > :not(.art) { margin-inline: var(--space-5); }
+  .proj > :last-child { margin-bottom: var(--space-5); }
+  .art { height: 120px; display: grid; place-items: center; background: var(--panel); border-bottom: 1px solid var(--border);
+    background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--panel-ink) 22%, transparent) 1px, transparent 0); background-size: 14px 14px; }
+  .art span { font: 300 2.8rem/1 var(--font-sans); letter-spacing: -0.04em; color: var(--panel-ink); }
+  .head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+  h3 { margin: 0; font-size: 1.25rem; }
+  p { color: var(--soft); margin: 0; font-size: .95rem; }
+  .badge { display: inline-flex; align-items: center; gap: .4rem; padding: .28rem .55rem; border-radius: 2px; border: 1px solid var(--border-strong);
+    font: 400 .62rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--soft); white-space: nowrap; }
+  .badge.production { color: var(--live); border-color: color-mix(in srgb, var(--live) 45%, transparent); }
+  .badge.production::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+  .stack { display: flex; flex-wrap: wrap; gap: .4rem .9rem; list-style: none; padding: var(--space-3) 0 0; margin: auto 0 0; border-top: 1px solid var(--border); }
+  .stack li { font: 400 .68rem/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .links { display: flex; gap: var(--space-4); font-weight: 500; font-size: .92rem; }
+  .links a { text-decoration: none; } .links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+</style>

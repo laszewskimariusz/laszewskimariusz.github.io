@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import Services from './Services.astro';
+import Stats from './Stats.astro';
+import TeamDiagram from './TeamDiagram.astro';
+import Projects from './Projects.astro';
+import Stack from './Stack.astro';
+import About from './About.astro';
+import Footer from './Footer.astro';
+import { loadSite, type Lang } from '../lib/content';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = loadSite(lang);
+---
+<Base lang={lang} title={s.meta.title} description={s.meta.description}>
+  <Header lang={lang} name={s.hero.name} nav={s.ui.nav} switchLabel={s.ui.switchLabel} themeLabel={s.ui.themeLabel} />
+  <main id="main">
+    <Hero data={s.hero} />
+    <Services data={s.services} />
+    <TeamDiagram data={s.team} labels={s.ui.modelLabel} />
+    <Stats data={s.stats} />
+    <Projects data={s.projects} badges={s.ui.badge} />
+    <Stack data={s.stack} />
+    <About data={s.about} />
+  </main>
+  <Footer data={s.footer} />
+</Base>

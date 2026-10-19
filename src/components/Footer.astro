@@ -1,0 +1,17 @@
+---
+import type { Site } from '../lib/content';
+interface Props { data: Site['footer'] }
+const { data } = Astro.props;
+---
+<footer><div class="container row">
+  <p><a href="#team">{data.note}</a></p>
+  <ul>{data.links.map((l) => <li><a href={l.href} rel="me noopener">{l.label}</a></li>)}</ul>
+</div></footer>
+<style>
+  footer { background: var(--panel); color: var(--panel-muted); padding-block: var(--space-7); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-5); justify-content: space-between; align-items: center; }
+  p { margin: 0; }
+  ul { display: flex; gap: var(--space-5); list-style: none; padding: 0; margin: 0; }
+  a { color: var(--panel-ink); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+</style>

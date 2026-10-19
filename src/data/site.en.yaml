@@ -1,0 +1,109 @@
+meta:
+  title: "Mariusz Łaszewski — AI agent teams, MCP, quality"
+  description: "Quality lead who designs and runs a team of 17+ specialised AI agents. Agentic systems, MCP, evals and safe delivery."
+ui:
+  switchLabel: "PL"
+  themeLabel: "Toggle dark mode"
+  nav:
+    - { label: "What I do", href: "#what" }
+    - { label: "How we work", href: "#team" }
+    - { label: "Built", href: "#built" }
+    - { label: "About", href: "#about" }
+  badge: { open-source: "open source", production: "in production", private: "private" }
+  modelLabel: { light: "lighter model — reads, searches, summarises", strong: "stronger model — architecture, decisions, review" }
+hero:
+  name: "Mariusz Łaszewski"
+  tagline: "Quality lead who builds AI agent teams."
+  intro: "I design multi-agent LLM systems and run them like an engineering team: clear roles, quality gates, measured cost and no secrets in code. My background in quality engineering is why the agents ship work I can trust."
+  links:
+    - { label: "GitHub", href: "https://github.com/laszewskimariusz" }
+    - { label: "LinkedIn", href: "https://www.linkedin.com/in/mariusz-laszewski-32028394/" }
+    - { label: "Email", href: "mailto:laszewskimariusz@gmail.com" }
+services:
+  eyebrow: "What I do"
+  title: "Three things I am good at"
+  items:
+    - title: "Agentic systems"
+      body: "Teams of specialised agents with explicit roles, hand-offs and limits — orchestrated, not improvised."
+      points: ["multi-agent orchestration", "context engineering", "long-term agent memory", "model routing by task"]
+    - title: "MCP & integrations"
+      body: "Agents get tools through the Model Context Protocol and packaged plugins, with permissions scoped per role."
+      points: ["custom MCP servers", "versioned plugin with agents and skills", "integrations with issue tracking and deployment"]
+    - title: "Quality & safety for AI"
+      body: "The same discipline as in a regulated QMS: specs, reviews, tests, documented decisions and guarded secrets."
+      points: ["spec review gate (3 reviewers, 8/10)", "LLM-as-judge and E2E tests", "prompt-injection and secret-leak guards", "secrets in HashiCorp Vault"]
+team:
+  eyebrow: "How we work"
+  title: "One human, one coordinator, a team of specialists"
+  intro: "I set direction and approve what matters. A coordinating agent plans and delegates. Specialist agents do the work — each with its own role, tools and model."
+  human: { role: "Me — CEO & product owner", does: "Sets goals, makes business decisions, approves specs and irreversible actions." }
+  coordinator: { role: "Coordinator agent (CTO)", does: "Breaks work into tasks, picks the right specialist and model, checks results before they reach me." }
+  agents:
+    - { id: architect, role: "Architect", does: "System and API design, architecture decision records.", model: strong }
+    - { id: developer, role: "Developer", does: "Features and fixes, test-first, clean code.", model: strong }
+    - { id: reviewer, role: "Code reviewer", does: "Reviews every change for correctness and standards.", model: strong }
+    - { id: qa, role: "QA engineer", does: "Unit, integration and end-to-end tests, test plans.", model: light }
+    - { id: security, role: "Security", does: "OWASP checks, hardening, secret scanning.", model: strong }
+    - { id: infra, role: "Infrastructure", does: "Containers, CI/CD, monitoring, deployments.", model: light }
+    - { id: research, role: "Research", does: "Technology research, benchmarks, recommendations.", model: light }
+    - { id: auditor, role: "ISO auditor", does: "ISO 9001 and ISO 27001 audits of the products we build.", model: strong }
+  flowTitle: "From idea to production"
+  flow:
+    - { id: task, label: "Task", detail: "Every piece of work starts as a tracked issue." }
+    - { id: spec, label: "Spec", detail: "A written spec with acceptance criteria." }
+    - { id: gate, label: "Review gate", detail: "Three independent reviewers; below 8/10 it goes back." }
+    - { id: build, label: "Build", detail: "Implementation on an isolated build machine, test-first." }
+    - { id: review, label: "Code review", detail: "A separate agent reviews the change." }
+    - { id: test, label: "Tests", detail: "Automated tests, E2E where it matters." }
+    - { id: ship, label: "Ship", detail: "Deploy, verify, record the decision." }
+  principlesTitle: "Rules the team follows"
+  principles:
+    - "Cheap models read and search; strong models decide."
+    - "One writer per file — agents never edit the same thing in parallel."
+    - "Zero secrets in repositories; everything comes from a vault at runtime."
+    - "Irreversible actions need a human yes."
+    - "Verify what an agent concluded, not only what it read."
+stats:
+  eyebrow: "In numbers"
+  title: "What the system runs today"
+  items:
+    - { value: "17+", label: "specialised AI agents" }
+    - { value: "~25", label: "projects in the portfolio" }
+    - { value: "13", label: "running in production" }
+    - { value: "−50%", label: "tokens at session start (81k → 40k)" }
+    - { value: "210", label: "secrets moved to Vault, 0 in repos" }
+    - { value: "20+", label: "architecture decision records" }
+projects:
+  eyebrow: "What I built"
+  title: "Built with my agent team"
+  items:
+    - { id: skemo, name: "Skemo", summary: "Engineering workspace — issues, docs and canvas — with an AI layer: agent feed, semantic search and an MCP API for agents.", stack: ["Next.js", "MCP", "Containers"], visibility: production }
+    - { id: topsky, name: "TopSky Desktop", summary: "Desktop companion for flight-simulation pilots: livery manager for MSFS and X-Plane.", stack: ["Tauri", "Rust", "React"], visibility: production }
+    - { id: coc, name: "Claude-of-Crafting", summary: "Path of Exile crafting simulator with an AI coach built on the Claude API.", stack: ["Next.js", "Claude API"], visibility: private }
+    - { id: shygarlic, name: "Shy Garlic", summary: "Open-source homelab dashboard where the YAML file and the UI are the same thing.", stack: ["Go", "Docker", "Helm"], visibility: open-source, repo: "https://github.com/zatto-dev/shy-garlic" }
+    - { id: brainai, name: "brain-ai", summary: "Token-efficient memory and multi-agent orchestration framework for coding agents.", stack: ["Claude Code", "Agent Skills", "Markdown"], visibility: open-source, repo: "https://github.com/laszewskimariusz/brain-ai" }
+    - { id: atlas, name: "Milky Way Atlas", summary: "Interactive 3D atlas of the galaxy with its own WebGL2 physics engine.", stack: ["WebGL2", "Three.js", "TypeScript"], visibility: private }
+    - { id: rukia, name: "Rukia", summary: "Family AI assistant with long-term memory, model fallback and hardened permissions.", stack: ["hermes-agent", "Honcho"], visibility: private }
+stack:
+  eyebrow: "Stack"
+  title: "Tools I use every day"
+  groups:
+    - { title: "AI & LLM", items: ["Claude API", "Claude Code", "OpenAI GPT", "Codex CLI", "LiteLLM", "MCP", "Honcho", "M365 Copilot Agent Builder"] }
+    - { title: "Code", items: ["TypeScript", "Python", "Bash", "Next.js", "React", "Astro", "Tauri", "WebGL2"] }
+    - { title: "Data", items: ["PostgreSQL", "Supabase", "Upstash", "Power BI"] }
+    - { title: "Infra & ops", items: ["Proxmox", "Docker", "Forgejo CI", "Dokploy", "Vercel", "Cloudflare", "Grafana", "HashiCorp Vault"] }
+    - { title: "Quality", items: ["ISO 9001:2015", "CAPA / RCA", "Six Sigma (DMAIC)", "ADR", "E2E testing"] }
+about:
+  eyebrow: "About"
+  title: "From quality engineering to AI engineering"
+  paragraphs:
+    - "I started in IT and network administration, including in the Polish Army, then spent more than ten years in UK logistics leading teams of up to 36 people."
+    - "Today I am a Quality Lead Engineer at Leidos in aviation security systems — ISO 9001 audits, CAPA, supplier quality and a team of engineers and inspectors."
+    - "Since 2024 I run Zatto Software, where I build products with a team of AI agents. Quality thinking is what makes that team reliable."
+  location: "UK now · Warsaw area from 2027"
+footer:
+  note: "This site was built by me and my agent team — see how we work above."
+  links:
+    - { label: "GitHub", href: "https://github.com/laszewskimariusz" }
+    - { label: "LinkedIn", href: "https://www.linkedin.com/in/mariusz-laszewski-32028394/" }
+    - { label: "zatto.dev", href: "https://zatto.dev" }

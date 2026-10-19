@@ -1,0 +1,27 @@
+---
+import type { Site } from '../lib/content';
+import HeroGraph from './HeroGraph.astro';
+interface Props { data: Site['hero'] }
+const { data } = Astro.props;
+---
+<section class="hero">
+  <div class="container wrap">
+    <div class="copy">
+      <p class="eyebrow">{data.name}</p>
+      <h1>{data.tagline}</h1>
+      <p class="intro">{data.intro}</p>
+      <ul class="links">
+        {data.links.map((l, i) => <li><a class={i === 0 ? 'btn primary' : 'btn'} href={l.href} rel={l.href.startsWith('http') ? 'me noopener' : undefined}>{l.label}</a></li>)}
+      </ul>
+    </div>
+    <HeroGraph />
+  </div>
+</section>
+<style>
+  .hero { border-top: 0; padding-block: clamp(4rem, 10vw, 8rem) clamp(3rem, 7vw, 5rem); position: relative; overflow: hidden; }
+  .wrap { display: grid; gap: var(--space-6); grid-template-columns: 1.25fr 1fr; align-items: center; }
+  h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 350; margin: var(--space-4) 0 var(--space-5); }
+  .intro { color: var(--soft); font-size: clamp(1.1rem, 2vw, 1.3rem); letter-spacing: -0.012em; max-width: 36rem; margin: 0; }
+  .links { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; padding: 0; margin: var(--space-6) 0 0; }
+  @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; } }
+</style>

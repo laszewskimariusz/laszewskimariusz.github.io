@@ -1,0 +1,16 @@
+---
+import type { Site } from '../lib/content';
+interface Props { data: Site['stack'] }
+const { data } = Astro.props;
+---
+<section id="stack"><div class="container">
+  <p class="eyebrow">{data.eyebrow}</p><h2>{data.title}</h2>
+  <div class="grid">
+    {data.groups.map((g) => <div><h3>{g.title}</h3><ul class="tags">{g.items.map((i) => <li>{i}</li>)}</ul></div>)}
+  </div>
+</div></section>
+<style>
+  h3 { font: 400 .7rem/1.2 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 var(--space-3); }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; padding: 0; margin: 0; }
+  .tags li { border: 1px solid var(--border-strong); border-radius: 2px; padding: .3rem .6rem; font-size: .88rem; background: var(--card); }
+</style>

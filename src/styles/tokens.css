@@ -1,0 +1,35 @@
+/* Monochrome, after zatto.dev: ink on warm paper. Emphasis from weight and scale, not hue. */
+:root {
+  color-scheme: light;
+  --font-sans: "Geist Variable", "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --radius: 3px;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: clamp(3.75rem, 8vw, 6.5rem);
+  --bg: #f5f5f2; --card: #ffffff; --sunken: #ecece8;
+  --fg: #0a0a0a; --soft: #424347; --muted: #67686d;
+  --border: #dcdcd6; --border-strong: #bdbdb6;
+  --accent: #0a0a0a; --accent-hover: #2b2b2e; --accent-ink: #ffffff; --accent-2: #67686d;
+  --panel: #0a0a0a; --panel-ink: #f5f5f2; --panel-rule: #2a2a2d; --panel-muted: #8d8d8a;
+  --live: #2f7d54;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0a0a; --card: #121214; --sunken: #0f0f11;
+  --fg: #f5f5f2; --soft: #b4b4b0; --muted: #8d8d8a;
+  --border: #232327; --border-strong: #3a3a3f;
+  --accent: #f5f5f2; --accent-hover: #ffffff; --accent-ink: #0a0a0a; --accent-2: #8d8d8a;
+  --panel: #141416; --panel-ink: #f5f5f2; --panel-rule: #2a2a2d; --panel-muted: #8d8d8a;
+  --live: #4fae7f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0a0a0a; --card: #121214; --sunken: #0f0f11;
+    --fg: #f5f5f2; --soft: #b4b4b0; --muted: #8d8d8a;
+    --border: #232327; --border-strong: #3a3a3f;
+    --accent: #f5f5f2; --accent-hover: #ffffff; --accent-ink: #0a0a0a; --accent-2: #8d8d8a;
+    --panel: #141416; --panel-ink: #f5f5f2; --panel-rule: #2a2a2d; --panel-muted: #8d8d8a;
+    --live: #4fae7f;
+  }
+}

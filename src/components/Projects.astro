@@ -1,0 +1,10 @@
+---
+import type { Site } from '../lib/content';
+import ProjectCard from './ProjectCard.astro';
+interface Props { data: Site['projects']; badges: Site['ui']['badge'] }
+const { data, badges } = Astro.props;
+---
+<section id="built"><div class="container">
+  <p class="eyebrow">{data.eyebrow}</p><h2>{data.title}</h2>
+  <div class="grid">{data.items.map((p) => <ProjectCard p={p} badge={badges[p.visibility]} />)}</div>
+</div></section>
